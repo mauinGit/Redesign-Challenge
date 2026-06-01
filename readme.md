@@ -22,12 +22,12 @@ Repository ini bisa dijadikan **referensi atau contoh** untuk project kamu. Beri
 
 ### 1. Clone Repository
 ```bash
-
+https://github.com/mauinGit/Redesign-Challenge.git
 ```
 
 ### 2. Masuk ke Folder Project
 ```bash
-cd redesign-challenge
+cd Redesign-Challenge
 ```
 
 ### 3. Setup Backend & Frontend
