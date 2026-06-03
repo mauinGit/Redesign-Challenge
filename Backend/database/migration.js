@@ -27,10 +27,12 @@ connection.query(`USE ${process.env.DB_NAME}`, (err) => {
 connection.query(`
     CREATE TABLE IF NOT EXISTS game (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        game_code VARCHAR(50) NOT NULL,
-        name VARCHAR(100) NOT NULL,
+        game_code VARCHAR(12) NOT NULL UNIQUE,
+        name VARCHAR(255) NOT NULL,
         rating FLOAT NOT NULL,
-        year INT NOT NULL
+        year INT NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )
 `, (err) => {
     if (err) throw err

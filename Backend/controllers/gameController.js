@@ -12,6 +12,7 @@ const getGameByIdController = (req, res) => {
     const id = req.params.id
     getGameById(id, (err, fields) => {
         if (err) return response(404, 'Not Found', 'Data Game tidak ditemukan', res)
+        if (fields.length === 0) return response(404, 'Not Found', `Data Game ${id} tidak ditemukan`, res)
         response(200, fields, `Data Game ${id}`, res)
     })
 }

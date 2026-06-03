@@ -6,9 +6,10 @@ const getAllGames = (callback) => {
 }
 
 const getGameById = (id, callback) => {
-    const { gameCode } = id
-    const sql = `SELECT * FROM game WHERE game_code = ?`
-    db.query(sql, [gameCode], callback)
+    const sql = `SELECT * FROM game WHERE id = ?`
+    db.query(sql, [parseInt(id)], (err, fields) => {
+        callback(err, fields)
+    })
 }
 
 const createGame = (data, callback) => {
